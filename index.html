@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart Image Tools - Official Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-color: #0A0F1C;
@@ -12,6 +13,9 @@
             --text-sub: #8B95A5;
             --accent-color: #16A34A;
             --accent-hover: #15803d;
+            --danger-bg: #2C1A1A;
+            --danger-border: #EF4444;
+            --danger-text: #FCA5A5;
         }
 
         * {
@@ -21,7 +25,7 @@
         }
 
         body {
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Inter', sans-serif;
             background-color: var(--bg-color);
             color: var(--text-sub);
             line-height: 1.6;
@@ -29,25 +33,45 @@
         }
 
         .container {
-            max-width: 900px;
+            max-width: 850px;
             margin: 40px auto;
         }
 
         header {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
 
         header h1 {
             color: var(--text-main);
             font-size: 2.5rem;
             margin-bottom: 10px;
+            font-weight: 800;
         }
 
         header p {
             font-size: 1.1rem;
             color: var(--accent-color);
-            font-weight: bold;
+            font-weight: 600;
+        }
+
+        /* --- STRICT WARNING BANNER --- */
+        .strict-warning {
+            background-color: var(--danger-bg);
+            border-left: 5px solid var(--danger-border);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            color: var(--danger-text);
+            font-size: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+
+        .strict-warning strong {
+            display: block;
+            color: #EF4444;
+            font-size: 18px;
+            margin-bottom: 8px;
         }
 
         /* --- Tabs UI --- */
@@ -66,10 +90,11 @@
             padding: 12px 24px;
             border-radius: 30px;
             cursor: pointer;
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 600;
             transition: all 0.3s ease;
             outline: none;
+            font-family: 'Inter', sans-serif;
         }
 
         .tab-btn:hover {
@@ -97,8 +122,8 @@
             color: var(--text-main);
             margin-bottom: 20px;
             font-size: 1.8rem;
-            border-bottom: 2px solid var(--bg-color);
-            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 15px;
         }
 
         .tab-content h3 {
@@ -144,7 +169,7 @@
         /* Responsive */
         @media (max-width: 600px) {
             .tab-content {
-                padding: 20px;
+                padding: 25px 20px;
             }
             .tab-btn {
                 flex: 1 1 45%;
@@ -160,8 +185,14 @@
     <div class="container">
         <header>
             <h1>Smart Image Tools</h1>
-            <p>100% Offline • No Ads • No Login</p>
+            <p>100% Offline • No Ads • Secure Processing</p>
         </header>
+
+        <!-- STRICT WARNING BANNER -->
+        <div class="strict-warning">
+            <strong>⚠️ CRITICAL DISCLAIMER</strong>
+            Please read carefully: <b>Use this app entirely at your own risk.</b> Before you pay the ₹49 fee for 2 months of premium access, <b>think 100 times and then pay.</b> We strongly advise you to use the provided 1-Time Free Trial to thoroughly test if the app works correctly on your specific Android device. We do not offer refunds under any circumstances.
+        </div>
 
         <!-- Tab Buttons -->
         <div class="tabs">
@@ -174,53 +205,53 @@
         <!-- 1. About App -->
         <div id="about" class="tab-content" style="display: block;">
             <h2>About Smart Image Tools</h2>
-            <p><strong>Smart Image Tools</strong> (developed by mrbushx) is your ultimate all-in-one suite designed to make daily image editing tasks quick, secure, and incredibly easy.</p>
-            <p>Unlike other applications that upload your personal files to the cloud, Smart Image Tools was built with a strict <strong>100% Offline</strong> architecture. It uses the hardware capabilities of your own device to process everything instantly, saving your data and protecting your privacy.</p>
+            <p><strong>Smart Image Tools</strong> is your ultimate offline suite designed to make daily image editing tasks quick, secure, and incredibly easy.</p>
+            <p>Unlike other applications that upload your personal files to the internet, Smart Image Tools was built with a strict <strong>100% Offline</strong> architecture. It uses the hardware capabilities of your own device to process everything instantly, ensuring maximum privacy.</p>
             
             <h3>Core Features:</h3>
             <ul>
-                <li><strong>Image Resizer:</strong> Resize images easily for social media, websites, or email attachments.</li>
-                <li><strong>ID Photo Cropper:</strong> Crop ID photos perfectly to professional passport and visa dimensions.</li>
-                <li><strong>Increase/Reduce Image Size:</strong> Modify the file size (KB/MB) effortlessly while maintaining visual quality.</li>
+                <li><strong>Image Resizer:</strong> Resize images easily for social media, websites, or emails.</li>
+                <li><strong>ID Photo Cropper:</strong> Crop ID photos perfectly to professional dimensions.</li>
+                <li><strong>Increase/Reduce File Size:</strong> Modify the KB/MB size effortlessly.</li>
                 <li><strong>Universal Image Converter:</strong> Convert formats instantly between JPG, PNG, and WebP.</li>
-                <li><strong>Join Images & PDF Tools:</strong> Merge images together or convert PDF pages directly into high-quality images.</li>
+                <li><strong>PDF Tools:</strong> Convert PDF pages directly into high-quality images.</li>
             </ul>
         </div>
 
         <!-- 2. Privacy Policy -->
         <div id="privacy" class="tab-content">
             <h2>Privacy Policy</h2>
-            <p>Your privacy is our absolute highest priority. This Privacy Policy outlines our strict data handling practices for Smart Image Tools.</p>
+            <p>Your privacy is our absolute highest priority. This Privacy Policy outlines our strict data handling practices.</p>
             
             <h3>1. 100% Offline Processing</h3>
-            <p>Smart Image Tools is designed to work completely offline. Your photos, documents, and files <strong>never leave your device</strong>. We do not have servers that collect, process, or store your images.</p>
+            <p>Smart Image Tools operates completely offline. Your photos, documents, and files <strong>never leave your device</strong>. We do not own servers, and we do not collect, process, or store your images remotely.</p>
             
             <h3>2. Data Collection</h3>
             <p>We do not collect any personally identifiable information (PII). We do not require an account, email address, or login to use the app.</p>
             
-            <h3>3. Permissions</h3>
-            <p>The app only requests permission to read and write to your device's storage. This is strictly required so the app can select the images you want to edit and save the finished result to your Gallery (in the 'ImageResizer' folder).</p>
+            <h3>3. Device Permissions</h3>
+            <p>The app only requests permission to read and write to your device's storage. This is strictly required so the app can select the images you want to edit and save the finished result to your Gallery.</p>
             
-            <h3>4. Third-Party Analytics</h3>
-            <p>Because the app is completely offline and ad-free, we do not utilize third-party trackers or data brokers.</p>
+            <h3>4. Payment Tracking</h3>
+            <p>To verify your premium status without requiring a login, we securely encrypt a localized key tied to your device's unique hardware ID. This is stored locally on your phone and is not sent to any database.</p>
         </div>
 
         <!-- 3. Terms of Service -->
         <div id="terms" class="tab-content">
             <h2>Terms of Service</h2>
-            <p>By downloading or using Smart Image Tools, you agree to the following terms and conditions:</p>
+            <p>By downloading, installing, or using Smart Image Tools, you agree to the following terms and conditions:</p>
             
-            <h3>1. Acceptable Use</h3>
-            <p>You agree to use this application only for lawful purposes. You are strictly prohibited from using these tools to manipulate images or documents for illegal activities, fraud, identity theft, or forgery.</p>
+            <h3>1. Use At Your Own Risk</h3>
+            <p>This software is provided "AS IS", without warranty of any kind. <strong>You use this application entirely at your own risk.</strong> We do not guarantee that the software will be completely error-free, immune to crashes, or compatible with every Android device model on the market.</p>
             
-            <h3>2. Disclaimer of Warranties</h3>
-            <p>The application is provided "AS IS", without warranty of any kind, express or implied. While we strive to provide the best tools possible, we cannot guarantee that the software will be completely error-free or compatible with every Android device.</p>
+            <h3>2. Payments & Refunds</h3>
+            <p>Our premium service costs a one-time fee of ₹49 for 2 months of access. <strong>Before you pay 49 rupees, think 100 times and pay.</strong> Because we provide a Free Trial to test the app beforehand, <strong>all payments are strictly final and non-refundable.</strong> If you change your phone or factory reset your device, your premium status may be lost as we do not use cloud accounts to track users.</p>
             
-            <h3>3. Limitation of Liability</h3>
-            <p>In no event shall the developer (mrbushx) be held liable for any damages, data loss, or file corruption arising from the use or inability to use this application. Always ensure you have backups of your original images.</p>
-
-            <h3>4. Changes to Terms</h3>
-            <p>We reserve the right to modify these terms at any time. Continued use of the app constitutes acceptance of any updated terms.</p>
+            <h3>3. Acceptable Use</h3>
+            <p>You agree to use this application only for lawful purposes. You are strictly prohibited from using these tools to manipulate images or documents for fraud, identity theft, or forgery.</p>
+            
+            <h3>4. Limitation of Liability</h3>
+            <p>In no event shall the developer be held liable for any damages, data loss, file corruption, or financial loss arising from the use or inability to use this application. Always ensure you have backups of your original images.</p>
         </div>
 
         <!-- 4. FAQ -->
@@ -228,28 +259,28 @@
             <h2>Frequently Asked Questions</h2>
             
             <div class="faq-item">
+                <h4>Q: How does the Free Trial work?</h4>
+                <p>A: When you first install the app, you get exactly 1 free usage of any tool. This allows you to test the app to ensure it works on your device before deciding to pay.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>Q: What do I get for ₹49?</h4>
+                <p>A: Paying ₹49 grants your device full, unlimited access to all tools in the app for exactly 60 days (2 months). No ads, no restrictions.</p>
+            </div>
+
+            <div class="faq-item">
                 <h4>Q: Where are my edited images saved?</h4>
                 <p>A: All processed files are saved automatically directly to your phone's Gallery, inside a dedicated folder named <strong>'ImageResizer'</strong>.</p>
             </div>
 
             <div class="faq-item">
-                <h4>Q: Do I need an internet connection to use the app?</h4>
-                <p>A: No. Smart Image Tools is entirely self-contained and works 100% offline. You can edit images on airplane mode or without an active data plan.</p>
-            </div>
-
-            <div class="faq-item">
-                <h4>Q: Are there any hidden fees or watermarks?</h4>
-                <p>A: No! The app features <strong>No Ads, No Logins, and No Watermarks</strong> on your processed files.</p>
-            </div>
-
-            <div class="faq-item">
-                <h4>Q: Can I change the default save format?</h4>
-                <p>A: Yes! Open the app, go to <strong>Settings > Default Image Format</strong>, and you can choose whether files are saved as JPG, PNG, or WebP by default.</p>
+                <h4>Q: Do I need an internet connection to use the tools?</h4>
+                <p>A: No. The only time you need the internet is to process your ₹49 payment. After that, the app is entirely self-contained and works 100% offline.</p>
             </div>
             
             <div class="faq-item">
-                <h4>Q: How do I clear my recent history?</h4>
-                <p>A: Simply go to Settings and click "Clear Recent Files". This will instantly wipe the history shown on your Recent tab.</p>
+                <h4>Q: What happens if I uninstall the app or change phones?</h4>
+                <p>A: Because we respect your privacy and do not force you to create a cloud login account, your premium status is tied directly to your current device installation. Uninstalling the app or wiping your phone data may result in the loss of your 2-month premium pass.</p>
             </div>
         </div>
 
