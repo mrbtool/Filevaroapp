@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Image Tools - Official Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0A0F1C;
+            --card-color: #131B2B;
+            --text-main: #FFFFFF;
+            --text-sub: #8B95A5;
+            --accent-color: #16A34A;
+            --danger-bg: #2C1A1A;
+            --danger-border: #EF4444;
+            --danger-text: #FCA5A5;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-sub);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container { max-width: 850px; margin: 40px auto; }
+        header { text-align: center; margin-bottom: 30px; }
+        header h1 { color: var(--text-main); font-size: 2.5rem; margin-bottom: 10px; font-weight: 800; }
+        header p { font-size: 1.1rem; color: var(--accent-color); font-weight: 600; }
+
+        .strict-warning {
+            background-color: var(--danger-bg);
+            border-left: 5px solid var(--danger-border);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            color: var(--danger-text);
+            font-size: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+        .strict-warning strong { display: block; color: #EF4444; font-size: 18px; margin-bottom: 8px; }
+
+        .tabs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; justify-content: center; }
+        .tab-btn {
+            background-color: var(--card-color); color: var(--text-sub); border: 2px solid transparent;
+            padding: 12px 24px; border-radius: 30px; cursor: pointer; font-size: 15px; font-weight: 600; transition: all 0.3s ease;
+        }
+        .tab-btn:hover { color: var(--text-main); border-color: var(--accent-color); }
+        .tab-btn.active { background-color: var(--accent-color); color: #ffffff; box-shadow: 0 4px 15px rgba(22, 163, 74, 0.4); }
+
+        .tab-content {
+            display: none; background-color: var(--card-color); padding: 40px; border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); animation: fadeIn 0.4s ease-in-out;
+        }
+        .tab-content h2 { color: var(--text-main); margin-bottom: 20px; font-size: 1.8rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 15px; }
+        .tab-content h3 { color: var(--text-main); margin-top: 25px; margin-bottom: 10px; font-size: 1.2rem; }
+        .tab-content p, .tab-content ul { margin-bottom: 15px; }
+        .tab-content ul { padding-left: 20px; }
+        .tab-content li { margin-bottom: 8px; }
+
+        .faq-item { background-color: var(--bg-color); padding: 20px; border-radius: 12px; margin-bottom: 15px; border-left: 4px solid var(--accent-color); }
+        .faq-item h4 { color: var(--text-main); font-size: 1.1rem; margin-bottom: 5px; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        @media (max-width: 600px) { .tab-content { padding: 25px 20px; } .tab-btn { flex: 1 1 45%; text-align: center; font-size: 14px; padding: 10px; } }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Smart Image Tools</h1>
+            <p>100% Offline • No Ads • Secure Processing</p>
+        </header>
+
+        <div class="strict-warning">
+            <strong>⚠️ CRITICAL DISCLAIMER</strong>
+            Please read carefully: <b>Use this app entirely at your own risk.</b> Before you pay the ₹49 fee for 2 months of premium access, <b>think 100 times and then pay.</b> We strongly advise all new users to purchase the <b>₹10 Trial (14 Days)</b> first to thoroughly test if the app works correctly on your specific Android device. We do not offer refunds under any circumstances.
+        </div>
+
+        <div class="tabs">
+            <button class="tab-btn active" onclick="openTab(event, 'about')">About App</button>
+            <button class="tab-btn" onclick="openTab(event, 'privacy')">Privacy Policy</button>
+            <button class="tab-btn" onclick="openTab(event, 'terms')">Terms of Service</button>
+            <button class="tab-btn" onclick="openTab(event, 'faq')">FAQ</button>
+        </div>
+
+        <div id="about" class="tab-content" style="display: block;">
+            <h2>About Smart Image Tools</h2>
+            <p><strong>Smart Image Tools</strong> is your ultimate offline suite designed to make daily image editing tasks quick, secure, and incredibly easy.</p>
+            <p>Unlike other applications that upload your personal files to the internet, Smart Image Tools was built with a strict <strong>100% Offline</strong> architecture. It uses the hardware capabilities of your own device to process everything instantly, ensuring maximum privacy.</p>
+        </div>
+
+        <div id="privacy" class="tab-content">
+            <h2>Privacy Policy</h2>
+            <h3>1. 100% Offline Processing</h3>
+            <p>Smart Image Tools operates completely offline. Your photos, documents, and files <strong>never leave your device</strong>. We do not own servers, and we do not collect, process, or store your images remotely.</p>
+            <h3>2. Data Collection</h3>
+            <p>We do not collect any personally identifiable information (PII). We do not require an account, email address, or login to use the app.</p>
+            <h3>3. Payment Tracking</h3>
+            <p>To verify your premium status without requiring a login, we securely encrypt a localized key tied to your device's unique hardware ID. This is stored locally on your phone and is not sent to any database.</p>
+        </div>
+
+        <div id="terms" class="tab-content">
+            <h2>Terms of Service</h2>
+            <h3>1. Use At Your Own Risk</h3>
+            <p>This software is provided "AS IS", without warranty of any kind. <strong>You use this application entirely at your own risk.</strong> We do not guarantee that the software will be compatible with every Android device model on the market.</p>
+            <h3>2. Payments & Refunds</h3>
+            <p>We offer a ₹10 Trial for 14 Days, and a Premium Pass for ₹49 (2 Months). <strong>Before you pay 49 rupees, think 100 times.</strong> Because we provide a highly affordable Trial to test the app beforehand, <strong>all payments are strictly final and non-refundable.</strong></p>
+        </div>
+
+        <div id="faq" class="tab-content">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h4>Q: How does the ₹10 Trial work?</h4>
+                <p>A: When you first try to use a tool, you will be prompted to purchase a 14-Day Trial for just ₹10. This allows you to completely test the app to ensure it works flawlessly on your device.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Q: What do I get for ₹49?</h4>
+                <p>A: Paying ₹49 grants your device full, unlimited access to all tools in the app for exactly 60 days (2 months). No ads, no restrictions.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Q: What happens if I uninstall the app or change phones?</h4>
+                <p>A: Because we respect your privacy and do not force you to create a cloud login account, your premium status is tied directly to your current device installation. Uninstalling the app or wiping your phone data may result in the loss of your active plan.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function openTab(evt, tabId) {
+            var tabContents = document.getElementsByClassName("tab-content");
+            for (var i = 0; i < tabContents.length; i++) tabContents[i].style.display = "none";
+            var tabBtns = document.getElementsByClassName("tab-btn");
+            for (var i = 0; i < tabBtns.length; i++) tabBtns[i].className = tabBtns[i].className.replace(" active", "");
+            document.getElementById(tabId).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+</body>
+</html>
