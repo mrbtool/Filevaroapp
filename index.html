@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Image Tools - Official Website</title>
+    <style>
+        :root {
+            --bg-color: #0A0F1C;
+            --card-color: #131B2B;
+            --text-main: #FFFFFF;
+            --text-sub: #8B95A5;
+            --accent-color: #16A34A;
+            --accent-hover: #15803d;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-sub);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            color: var(--text-main);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        /* --- Tabs UI --- */
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+            justify-content: center;
+        }
+
+        .tab-btn {
+            background-color: var(--card-color);
+            color: var(--text-sub);
+            border: 2px solid transparent;
+            padding: 12px 24px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+        .tab-btn:hover {
+            color: var(--text-main);
+            border-color: var(--accent-color);
+        }
+
+        .tab-btn.active {
+            background-color: var(--accent-color);
+            color: #ffffff;
+            box-shadow: 0 4px 15px rgba(22, 163, 74, 0.4);
+        }
+
+        /* --- Tab Content --- */
+        .tab-content {
+            display: none;
+            background-color: var(--card-color);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        .tab-content h2 {
+            color: var(--text-main);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            border-bottom: 2px solid var(--bg-color);
+            padding-bottom: 10px;
+        }
+
+        .tab-content h3 {
+            color: var(--text-main);
+            margin-top: 25px;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .tab-content p, .tab-content ul {
+            margin-bottom: 15px;
+        }
+
+        .tab-content ul {
+            padding-left: 20px;
+        }
+
+        .tab-content li {
+            margin-bottom: 8px;
+        }
+
+        /* --- FAQ Specific Styles --- */
+        .faq-item {
+            background-color: var(--bg-color);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .faq-item h4 {
+            color: var(--text-main);
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .tab-content {
+                padding: 20px;
+            }
+            .tab-btn {
+                flex: 1 1 45%;
+                text-align: center;
+                font-size: 14px;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Smart Image Tools</h1>
+            <p>100% Offline • No Ads • No Login</p>
+        </header>
+
+        <!-- Tab Buttons -->
+        <div class="tabs">
+            <button class="tab-btn active" onclick="openTab(event, 'about')">About App</button>
+            <button class="tab-btn" onclick="openTab(event, 'privacy')">Privacy Policy</button>
+            <button class="tab-btn" onclick="openTab(event, 'terms')">Terms of Service</button>
+            <button class="tab-btn" onclick="openTab(event, 'faq')">FAQ</button>
+        </div>
+
+        <!-- 1. About App -->
+        <div id="about" class="tab-content" style="display: block;">
+            <h2>About Smart Image Tools</h2>
+            <p><strong>Smart Image Tools</strong> (developed by mrbushx) is your ultimate all-in-one suite designed to make daily image editing tasks quick, secure, and incredibly easy.</p>
+            <p>Unlike other applications that upload your personal files to the cloud, Smart Image Tools was built with a strict <strong>100% Offline</strong> architecture. It uses the hardware capabilities of your own device to process everything instantly, saving your data and protecting your privacy.</p>
+            
+            <h3>Core Features:</h3>
+            <ul>
+                <li><strong>Image Resizer:</strong> Resize images easily for social media, websites, or email attachments.</li>
+                <li><strong>ID Photo Cropper:</strong> Crop ID photos perfectly to professional passport and visa dimensions.</li>
+                <li><strong>Increase/Reduce Image Size:</strong> Modify the file size (KB/MB) effortlessly while maintaining visual quality.</li>
+                <li><strong>Universal Image Converter:</strong> Convert formats instantly between JPG, PNG, and WebP.</li>
+                <li><strong>Join Images & PDF Tools:</strong> Merge images together or convert PDF pages directly into high-quality images.</li>
+            </ul>
+        </div>
+
+        <!-- 2. Privacy Policy -->
+        <div id="privacy" class="tab-content">
+            <h2>Privacy Policy</h2>
+            <p>Your privacy is our absolute highest priority. This Privacy Policy outlines our strict data handling practices for Smart Image Tools.</p>
+            
+            <h3>1. 100% Offline Processing</h3>
+            <p>Smart Image Tools is designed to work completely offline. Your photos, documents, and files <strong>never leave your device</strong>. We do not have servers that collect, process, or store your images.</p>
+            
+            <h3>2. Data Collection</h3>
+            <p>We do not collect any personally identifiable information (PII). We do not require an account, email address, or login to use the app.</p>
+            
+            <h3>3. Permissions</h3>
+            <p>The app only requests permission to read and write to your device's storage. This is strictly required so the app can select the images you want to edit and save the finished result to your Gallery (in the 'ImageResizer' folder).</p>
+            
+            <h3>4. Third-Party Analytics</h3>
+            <p>Because the app is completely offline and ad-free, we do not utilize third-party trackers or data brokers.</p>
+        </div>
+
+        <!-- 3. Terms of Service -->
+        <div id="terms" class="tab-content">
+            <h2>Terms of Service</h2>
+            <p>By downloading or using Smart Image Tools, you agree to the following terms and conditions:</p>
+            
+            <h3>1. Acceptable Use</h3>
+            <p>You agree to use this application only for lawful purposes. You are strictly prohibited from using these tools to manipulate images or documents for illegal activities, fraud, identity theft, or forgery.</p>
+            
+            <h3>2. Disclaimer of Warranties</h3>
+            <p>The application is provided "AS IS", without warranty of any kind, express or implied. While we strive to provide the best tools possible, we cannot guarantee that the software will be completely error-free or compatible with every Android device.</p>
+            
+            <h3>3. Limitation of Liability</h3>
+            <p>In no event shall the developer (mrbushx) be held liable for any damages, data loss, or file corruption arising from the use or inability to use this application. Always ensure you have backups of your original images.</p>
+
+            <h3>4. Changes to Terms</h3>
+            <p>We reserve the right to modify these terms at any time. Continued use of the app constitutes acceptance of any updated terms.</p>
+        </div>
+
+        <!-- 4. FAQ -->
+        <div id="faq" class="tab-content">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <h4>Q: Where are my edited images saved?</h4>
+                <p>A: All processed files are saved automatically directly to your phone's Gallery, inside a dedicated folder named <strong>'ImageResizer'</strong>.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>Q: Do I need an internet connection to use the app?</h4>
+                <p>A: No. Smart Image Tools is entirely self-contained and works 100% offline. You can edit images on airplane mode or without an active data plan.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>Q: Are there any hidden fees or watermarks?</h4>
+                <p>A: No! The app features <strong>No Ads, No Logins, and No Watermarks</strong> on your processed files.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>Q: Can I change the default save format?</h4>
+                <p>A: Yes! Open the app, go to <strong>Settings > Default Image Format</strong>, and you can choose whether files are saved as JPG, PNG, or WebP by default.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h4>Q: How do I clear my recent history?</h4>
+                <p>A: Simply go to Settings and click "Clear Recent Files". This will instantly wipe the history shown on your Recent tab.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JavaScript for Tab Switching -->
+    <script>
+        function openTab(evt, tabId) {
+            // Get all elements with class="tab-content" and hide them
+            var tabContents = document.getElementsByClassName("tab-content");
+            for (var i = 0; i < tabContents.length; i++) {
+                tabContents[i].style.display = "none";
+            }
+
+            // Get all elements with class="tab-btn" and remove the class "active"
+            var tabBtns = document.getElementsByClassName("tab-btn");
+            for (var i = 0; i < tabBtns.length; i++) {
+                tabBtns[i].className = tabBtns[i].className.replace(" active", "");
+            }
+
+            // Show the current tab, and add an "active" class to the button that opened the tab
+            document.getElementById(tabId).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+</body>
+</html>
